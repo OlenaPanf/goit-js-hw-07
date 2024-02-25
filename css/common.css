@@ -11,10 +11,21 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
- 
 }
 
-ul, li  {
+ul,
+li {
   list-style-type: none;
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.list-item {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

@@ -1,24 +1,24 @@
 const loginForm = document.querySelector('.login-form');
 
 loginForm.addEventListener('submit', function (event) {
-  event.preventDefault(); // Зупиняємо стандартну поведінку форми
+  event.preventDefault();
 
-  const emailInput = this.elements['email'];
-  const passwordInput = this.elements['password'];
+  const emailInput = event.currentTarget.elements['email'];
+  const passwordInput = event.currentTarget.elements['password'];
 
   const emailValue = emailInput.value.trim();
   const passwordValue = passwordInput.value.trim();
 
   if (!emailValue || !passwordValue) {
     alert('All form fields must be filled in');
-    return; // При пустих полях завершуємо виконання функції
+    return;
   }
 
-  const formData = {
+  const info = {
     email: emailValue,
     password: passwordValue,
   };
 
-  console.log(formData); // Виводимо об'єкт із введеними даними в консоль
-  this.reset(); // Очищаємо значення полів форми
+  console.log(info);
+  event.currentTarget.reset();
 });
